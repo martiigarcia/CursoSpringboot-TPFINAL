@@ -1,8 +1,11 @@
+
 A. Listar todos los cursos
 B. Listar todos los estudiantes
 C. Listar todos los estudiantes que tengan un dni mayor a 20M y que su apellido  “Romero”
 D. Listar todas las inscripciones rechazadas o pendiente
-E. Implementar las consultas (A, B, C y D) mediante consulta derivada
+
+E. Implementar las consultas (A, B, C y D) mediante *consulta derivada*
+
 F. Listar todos los cursos que hayan empezado después de “01/02/2020”
 G. Listar todas las inscripciones en base a un parámetro de estado
 H. Listar todas las inscripciones en base a un parámetro de estado utilizando consulta nativa
@@ -11,4 +14,3 @@ I. Listar todos los estudiantes de forma paginada y ordenada ascendente por DNI.
         a. pagina 1, tamaño 5
         b. pagina 0, tamaño 2
 
-CONECTAR CON LA BD

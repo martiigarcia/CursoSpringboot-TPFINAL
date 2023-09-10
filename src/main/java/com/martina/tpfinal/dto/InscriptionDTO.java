@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class InscriptionDTO {
     private Long id;
     private LocalDate date;
-    private String state; //aceptada, rechazada, pendiente
+    private String status; //aceptada, rechazada, pendiente
     private Long course;
     private Long student;
 }

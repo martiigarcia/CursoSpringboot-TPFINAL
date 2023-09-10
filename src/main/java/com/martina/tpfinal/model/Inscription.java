@@ -20,12 +20,16 @@ public class Inscription {
     private Long id;
 
     private LocalDate date;
-    private String state; //aceptada, rechazada, pendiente
+
+    @Enumerated(EnumType.STRING)
+    private Status status; //aceptada, rechazada, pendiente
 
     @ManyToOne
+    @JoinColumn(name = "course_id")
     private Course course;
 
     @ManyToOne
+    @JoinColumn(name = "student_id")
     private Student student;
 
 
