@@ -24,6 +24,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Query("SELECT s FROM Student s")
     List<Student> findAllStudents();
 
+
     //E -> C
     //de estas cual seria la correcta?
     List<Student> findByDniGreaterThanAndSurnameEquals(int dni, String surname);
@@ -36,10 +37,18 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     //a. pagina 1, tamaño 5
     //b. pagina 0, tamaño 2
 
-    Page<Student> findAllByOrderByDniAsc(Pageable pageable);
+    List<Student> findAllByOrderByDniAsc();
+//    Page<Student> findAllByOrderByDniAsc(Pageable pageable);
 
-    Pageable page1 = PageRequest.of(1, 5); // página 1, tamaño 5
-    Pageable page0 = PageRequest.of(0, 2); // página 0, tamaño 2
+    //las paginas para probar:
+//    Pageable page1 = PageRequest.of(1, 5); // página 1, tamaño 5
+//    Pageable page0 = PageRequest.of(0, 2); // página 0, tamaño 2
 
+
+    //no funciona:
+//    studentRepository.findAll(PageRequest.of(1, 5, Sort.by(Sort.Direction.ASC, "dni")));
+
+    //funciona
+    //studentRepository.findAll(PageRequest.of(0, 2, Sort.by(Sort.Direction.ASC, "dni")));
 
 }
