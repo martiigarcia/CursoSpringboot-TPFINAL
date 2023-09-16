@@ -14,15 +14,16 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
     //B
-    List<Student> findAll();
+    @Query("SELECT s FROM Student s")
+    List<Student> findAllStudents();
+
 
     //C
     @Query("SELECT s from Student s WHERE s.dni>20000000 AND s.surname='Romero'")
     List<Student> findAllStudentsByDNIGreaterThan20MAndSurnameIsRomero();
 
     //E -> B
-    @Query("SELECT s FROM Student s")
-    List<Student> findAllStudents();
+    List<Student> findAll();
 
 
     //E -> C
@@ -36,19 +37,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     //Probar las siguientes combinaciones:
     //a. pagina 1, tamaño 5
     //b. pagina 0, tamaño 2
-
-    List<Student> findAllByOrderByDniAsc();
-//    Page<Student> findAllByOrderByDniAsc(Pageable pageable);
-
-    //las paginas para probar:
-//    Pageable page1 = PageRequest.of(1, 5); // página 1, tamaño 5
-//    Pageable page0 = PageRequest.of(0, 2); // página 0, tamaño 2
-
-
-    //no funciona:
-//    studentRepository.findAll(PageRequest.of(1, 5, Sort.by(Sort.Direction.ASC, "dni")));
-
-    //funciona
-    //studentRepository.findAll(PageRequest.of(0, 2, Sort.by(Sort.Direction.ASC, "dni")));
+    Page<Student> findAllByOrderByDniAsc(Pageable pageable);
 
 }

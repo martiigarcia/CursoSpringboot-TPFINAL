@@ -12,11 +12,11 @@ import java.util.List;
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
     //A
-    List<Course> findAll();
-
-    //E -> A
     @Query("SELECT c FROM Course c")
     List<Course> findAllCourses();
+
+    //E -> A
+    List<Course> findAll();
 
     //F:
 
